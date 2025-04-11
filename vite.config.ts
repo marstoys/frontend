@@ -5,7 +5,8 @@ export default defineConfig({
     tailwindcss(),
   ],
   server: {
-    host: true, // bu muhim
-    port: 5173, // optional
+    host: true,
+    port: 5173,
+    allowedHosts: ['frontend-production-1d06.up.railway.app', 'toysmars.uz', 'www.toysmars.uz']
   }
 })
