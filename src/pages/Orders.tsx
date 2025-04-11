@@ -15,7 +15,7 @@ interface LastOrderType {
   updated_at?: string,
   buyer_name: string;
   buyer_surname: string;
-  Phone_number: string | null,
+  phone_number: string | null,
   address: string,
   total_price: string | number,
   payment_method: string,

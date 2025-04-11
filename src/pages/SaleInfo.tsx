@@ -28,7 +28,7 @@ export interface LastOrderType {
   updated_at?: string,
   buyer_name: string;
   buyer_surname: string;
-  Phone_number: string | null,
+  phone_number: string | null,
   address: string,
   total_price: string | number,
   payment_method: string,
@@ -100,7 +100,7 @@ const SaleInfo = () => {
     const LastData: LastOrderType = {
       buyer_name: firstName,
       buyer_surname: lastName,
-      Phone_number: formattedPhone,
+      phone_number: formattedPhone,
       address: address,
       total_price: totalPrice,
       payment_method: 'karta',
