@@ -1,0 +1,85 @@
+{
+  "header": {
+    "home": "Главная",
+    "allProducts": "Все товары",
+    "basket": "Корзина",
+    "orders": "Заказы",
+    "search": "Поиск товара",
+    "catalog": "Каталог",
+    "myOrders": "Мои заказы"
+  },
+  "footer": {
+    "aboutUs": "О нас",
+    "address": "Адрес: Базар Орекзор, Базар Килим / Самарбону 39A/1",
+    "phoneNumber": "Номер телефона",
+    "copyright": "2025 MARSTOYS - КРЕАТИВНОЕ АГЕНТСТВО",
+    "socialMedia": "Социальные сети"
+  },
+  "Hero": {
+    "subtitle": "Игрушки по лучшей цене",
+    "buttonText": "Купить сейчас"
+  },
+  "allProducts": {
+    "title": "Все товары",
+    "productsFound": "товаров найдено",
+    "all": "все",
+    "men": "Мужские игрушки",
+    "girl": "Женские игрушки",
+    "view": "просмотр",
+    "loading": "Загрузка данных",
+    "buyNow": "Купить сейчас"
+  },
+  "basket": {
+    "company": "Компания",
+    "rating": "Рейтинг",
+    "timesSold": "раз продано",
+    "commentTitle": "Информация о товаре",
+    "comment": "Отзывы",
+    "sum": "сумма",
+    "addToCart": "Добавить в корзину",
+    "noProductSelected": "Вы еще не выбрали игрушку",
+    "buyToy": "Купить игрушку",
+    "backtoButton": "Вернуться",
+    "backtoSale": "Вернуться к продаже",
+    "saleTitle": "Ваша корзина",
+    "count": "Количество",
+    "total": "Итого",
+    "deleteButton": "Удалить",
+    "toOrder": "Оформить заказ"
+  },
+  "order": {
+    "allOrder": "Все заказы",
+    "active": "Активный",
+    "BuyerName": "Владелец заказа",
+    "ProductName": "Название заказа",
+    "status": "Статус",
+    "deliveryDate": "Дата доставки",
+    "submittedAddress": "Указанный адрес",
+    "totalPrice": "Стоимость заказа"
+  },
+  "saleInfo": {
+    "formName": "Имя",
+    "formSurname": "Фамилия",
+    "phoneNumber": "Номер телефона",
+    "address": "Адрес доставки",
+    "ordery": "Ваш заказ",
+    "products": "Продукты",
+    "count": "шт.",
+    "total": "Итого",
+    "processingOrders": "Обработка заказа",
+    "money": "сумма",
+    "productCount": "Количество",
+    "verifySms": "Код подтверждения был отправлен вам",
+    "addVerifyCode": "Введите код подтверждения через несколько секунд",
+    "verifyCodeAdd": "Введите код подтверждения",
+    "verifyCodeButtonText": "Отправить"
+  },
+  "newProducts": {
+    "title": "Новые товары",
+    "buyText": "Купить сейчас",
+    "allProductsButtonTxt": "Посмотреть все"
+  },
+  "common": {
+    "loading": "Загрузка данных"
+  }
+}
