@@ -21,12 +21,12 @@
   },
   "allProducts": {
     "title": "Barcha Mahsulotlar",
-    "productsFound": "ta Mahsulot topildi",
-    "all": "hammasi",
+    "productsFound": "ta Mahsulotlar topildi",
+    "all": "Barcha uchun",
     "men": "O'gil Bolalar O'yinchoqlarini",
     "girl": "Qiz Bolalar O'yinchoqlarini",
     "view": "ko'rish",
-    "loading": "Malumot Yuklanyapti",
+    "loading": "Malumotlar yuklanmoqda",
     "buyNow": "Harid Qilish"
   },
   "basket": {
@@ -36,13 +36,13 @@
     "commentTitle": "Mahsulot haqida ma'lumot",
     "comment": "Sharhlar",
     "sum": "so'm",
-    "addToCart": "Savatga qo'shish",
+    "addToCart": "Savatchaga qo'shildi",
     "noProductSelected": "Hozircha O'yinchoq tanlamagansiz",
     "buyToy": "O'yinchoq sotib olish",
     "backtoButton": "Orqaga qaytish",
-    "backtoSale": "Sotuvga qaytish",
+    "backtoSale": "Sotuvlarga qaytish",
     "saleTitle": "Sizning savatchingiz",
-    "count": "Miqdori",
+    "count": "Miqdori o'zgartirildi",
     "total": "Jami",
     "deleteButton": "O'chirish",
     "toOrder": "Buyurtma Berish",
@@ -73,7 +73,7 @@
     "productCount": "Miqdori",
     "verifySms": "Sizga tadiqlash Ko'di yuborildi",
     "addVerifyCode": "sekund ichida Tasdiqlash ko'dini kiriting",
-    "verifyCodeAdd": "Tasdiqlash ko'dini kiritish",
+    "verifyCodeAdd": "Tasdiqlash kodini kiritish",
     "verifyCodeButtonText": "Yuborish",
     "payment": "To'lov qilish",
     "verifyCode": "Tasdiqlash ko'dini kiriting"
@@ -87,6 +87,6 @@
     "title": "O'yinchoqlar"
   },
   "common": {
-    "loading": "Malumot Yuklanyapti"
+    "loading": "Malumotlar yuklanmoqda"
   }
 }
