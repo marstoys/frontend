@@ -45,7 +45,8 @@
     "count": "Quantity",
     "total": "Total",
     "deleteButton": "Delete",
-    "toOrder": "Place Order"
+    "toOrder": "Place Order",
+    "totalProduct": "pcs."
   },
   "order": {
     "allOrder": "All Orders",

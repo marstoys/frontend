@@ -53,6 +53,7 @@ interface Translation {
     total: string;
     deleteButton: string;
     toOrder: string;
+    totalProduct: string;
   };
   order: {
     allOrder: string;

@@ -45,7 +45,8 @@
     "count": "Miqdori",
     "total": "Jami",
     "deleteButton": "O'chirish",
-    "toOrder": "Buyurtma Berish"
+    "toOrder": "Buyurtma Berish",
+    "totalProduct": "ta mahsulot"
   },
   "order": {
     "allOrder": "Barcha Buyurtmalar",

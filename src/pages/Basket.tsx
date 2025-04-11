@@ -35,7 +35,7 @@ const Basket = () => {
 
   useEffect(() => {
     if (id) {
-      if (language === 'uz') {  
+      if (language === 'uz') {
         instance.get<ProductsType>(`shop/product-details/${id}/`).then(res => {
           setProduct(res.data);
           setCommentList(res.data.comments);
@@ -140,9 +140,9 @@ const Basket = () => {
                 <ul className='w-[126px] flex flex-col gap-[20px]'>
                   {Array.isArray(product.images) && product.images.length > 0 ? (
                     product.images.map((image, index) => (
-                      <li 
-                        key={`image-${index}`} 
-                        onClick={() => handleThumbnailClick(index)} 
+                      <li
+                        key={`image-${index}`}
+                        onClick={() => handleThumbnailClick(index)}
                         className={`w-[80px] h-[80px] rounded-[12px] overflow-hidden cursor-pointer border-2 transition-all ${selectedImageIndex === index ? 'border-blue-500 scale-110' : 'border-gray-200'}`}
                       >
                         <img src={image} alt={`${product.name}-${index}`} className='w-full h-full object-cover' />
@@ -250,8 +250,8 @@ const Basket = () => {
       ) : (
         <div className='w-[1476px] mx-auto py-[50px] hidden lg:block'>
           <div className='flex items-center justify-between'>
-            <button className='mb-[30px] scale-[1.5] cursor-pointer w-[120px] py-[10px] px-[5px] bg-gradient-to-r from-pink-500 to-red-500 hover:from-pink-600 hover:to-red-600 border-none rounded-[10px] text-white text-[10px]' onClick={() => navigate(-1)}><ArrowLeftOutlined /> Orqaga qaytish</button>
-            <button className='mb-[30px] scale-[1.5] cursor-pointer w-[120px] py-[10px] px-[5px] bg-gradient-to-r from-pink-500 to-red-500 hover:from-pink-600 hover:to-red-600 border-none rounded-[10px] text-white text-[10px]' onClick={() => navigate(PATH.allproducts)}><ShoppingOutlined /> Sotuvga qaytish</button>
+            <button className='mb-[30px] scale-[1.5] cursor-pointer w-[120px] py-[10px] px-[5px] bg-gradient-to-r from-pink-500 to-red-500 hover:from-pink-600 hover:to-red-600 border-none rounded-[10px] text-white text-[10px]' onClick={() => navigate(-1)}><ArrowLeftOutlined /> {translations.basket.backtoButton}</button>
+            <button className='mb-[30px] scale-[1.5] cursor-pointer max-w-[200px] py-[10px] px-[5px] bg-gradient-to-r from-pink-500 to-red-500 hover:from-pink-600 hover:to-red-600 border-none rounded-[10px] text-white text-[10px]' onClick={() => navigate(PATH.allproducts)}><ShoppingOutlined /> {translations.basket.backtoSale}</button>
           </div>
           <h1 className='text-[32px] font-bold mb-[30px] text-center'>{translations.basket.saleTitle}</h1>
 
@@ -260,8 +260,8 @@ const Basket = () => {
               <div className='w-full flex flex-col gap-[20px] mb-[30px]'>
                 {Array.isArray(basketItems) && basketItems.length > 0 ? (
                   basketItems.map((item) => (
-                    <div 
-                      key={`basket-item-${item.id}`} 
+                    <div
+                      key={`basket-item-${item.id}`}
                       className='w-full flex items-center justify-between p-[20px] border rounded-[10px] bg-white shadow-lg'
                     >
                       <div className='flex items-center gap-[20px]'>
@@ -288,7 +288,7 @@ const Basket = () => {
                             className='w-[80px]'
                           />
                         </div>
-                        <Button type="primary" danger icon={<DeleteOutlined />} onClick={() => handleRemoveFromBasket(item.id)} className='!bg-gradient-to-r from-red-500 to-pink-500 hover:from-red-600 hover:to-pink-600 border-none'> O'chirish </Button>
+                        <Button type="primary" danger icon={<DeleteOutlined />} onClick={() => handleRemoveFromBasket(item.id)} className='!bg-gradient-to-r from-red-500 to-pink-500 hover:from-red-600 hover:to-pink-600 border-none'> {translations.basket.deleteButton} </Button>
                       </div>
                     </div>
                   ))
@@ -297,7 +297,7 @@ const Basket = () => {
               <div className='w-full flex justify-between items-center p-[20px] border rounded-[10px] bg-white shadow-xl '>
                 <div>
                   <h2 className='text-[24px] font-bold '> {translations.basket.total}: <span className='text-pink-500'>{calculateTotal()} {translations.basket.sum}</span> </h2>
-                  <p className='text-[16px] text-gray-600'>{translations.basket.total} {basketCount} ta mahsulot</p>
+                  <p className='text-[16px] text-gray-600'>{translations.basket.total} {basketCount} {translations.basket.totalProduct}</p>
                 </div>
                 <div>
                   <Button type="primary" size="large" onClick={handlePlaceOrder} className='!bg-gradient-to-r from-pink-500 to-red-500 hover:from-pink-600 hover:to-red-600 border-none'> {translations.basket.toOrder} </Button>
@@ -325,9 +325,9 @@ const Basket = () => {
                 <ul className='w-[126px] flex items-center gap-[20px]'>
                   {Array.isArray(product.images) && product.images.length > 0 ? (
                     product.images.map((image, index) => (
-                      <li 
-                        key={`image-${index}`} 
-                        onClick={() => handleThumbnailClick(index)} 
+                      <li
+                        key={`image-${index}`}
+                        onClick={() => handleThumbnailClick(index)}
                         className={`w-[80px] h-[80px] rounded-[12px] overflow-hidden cursor-pointer border-2 transition-all ${selectedImageIndex === index ? 'border-blue-500 scale-110' : 'border-gray-200'}`}
                       >
                         <img src={image} alt={`${product.name}-${index}`} className='w-full h-full object-cover' />
@@ -445,8 +445,8 @@ const Basket = () => {
               <div className='w-full flex flex-col gap-[20px] mb-[30px]'>
                 {Array.isArray(basketItems) && basketItems.length > 0 ? (
                   basketItems.map((item) => (
-                    <div 
-                      key={`basket-item-${item.id}`} 
+                    <div
+                      key={`basket-item-${item.id}`}
                       className='w-full flex items-center justify-between p-[20px] border rounded-[10px] bg-white shadow-lg'
                     >
                       <div className='flex items-center gap-[20px]'>
@@ -505,12 +505,12 @@ const Basket = () => {
           {product && (
             <div className='w-full flex flex-col gap-[30px]'>
               <div className='w-full flex flex-col-reverse gap-[24px]'>
-                <ul className='w-[126px] flex items-center gap-[20px]'>
+                <ul className='w-[140px] flex items-center gap-[20px]'>
                   {Array.isArray(product.images) && product.images.length > 0 ? (
                     product.images.map((image, index) => (
-                      <li 
-                        key={`image-${index}`} 
-                        onClick={() => handleThumbnailClick(index)} 
+                      <li
+                        key={`image-${index}`}
+                        onClick={() => handleThumbnailClick(index)}
                         className={`w-[80px] h-[80px] rounded-[12px] overflow-hidden cursor-pointer border-2 transition-all ${selectedImageIndex === index ? 'border-blue-500 scale-110' : 'border-gray-200'}`}
                       >
                         <img src={image} alt={`${product.name}-${index}`} className='w-full h-full object-cover' />
@@ -620,7 +620,7 @@ const Basket = () => {
           <h1 className='text-[32px] font-bold mb-[30px] text-center'>{translations.basket.saleTitle}</h1>
           <div className='w-full flex items-center justify-between mb-[30px]'>
             <button className='cursor-pointer w-[130px] py-[15px] px-[5px] bg-gradient-to-r from-pink-500 to-red-500 hover:from-pink-600 hover:to-red-600 border-none rounded-[10px] text-white text-[13px]' onClick={() => navigate(PATH.allproducts)}><ArrowLeftOutlined /> {translations.basket.backtoButton}</button>
-            <button className='cursor-pointer w-[130px] py-[15px] px-[5px] bg-gradient-to-r from-pink-500 to-red-500 hover:from-pink-600 hover:to-red-600 border-none rounded-[10px] text-white text-[13px]' onClick={() => navigate(PATH.allproducts)}><ShoppingOutlined /> {translations.basket.backtoSale}</button>
+            <button className='cursor-pointer max-w-[200px] py-[15px] px-[5px] bg-gradient-to-r from-pink-500 to-red-500 hover:from-pink-600 hover:to-red-600 border-none rounded-[10px] text-white text-[13px]' onClick={() => navigate(PATH.allproducts)}><ShoppingOutlined /> {translations.basket.backtoSale}</button>
           </div>
 
           {basketCount > 0 ? (
@@ -628,16 +628,20 @@ const Basket = () => {
               <div className='w-full flex flex-col gap-[20px] mb-[30px]'>
                 {Array.isArray(basketItems) && basketItems.length > 0 ? (
                   basketItems.map((item) => (
-                    <div 
-                      key={`basket-item-${item.id}`} 
-                      className='w-full flex items-center justify-between p-[20px] border rounded-[10px] bg-white shadow-lg'
+                    <div
+                      key={`basket-item-${item.id}`}
+                      className='w-full flex flex-col gap-[20px] p-[20px] border rounded-[10px] bg-white shadow-lg'
                     >
-                      <div className='flex items-center gap-[20px]'>
-                        <img src={item.images?.[0] || noImage} alt={item.name} className='w-[100px] h-[100px] object-cover rounded-[10px]' />
-                        <div>
-                          <h3 className='text-[20px] font-medium mb-[10px]'>{item.name}</h3>
+                      <div className='flex flex-col gap-[20px]'>
+                        <div className='flex items-center gap-[20px]'>
+                          <img src={item.images?.[0] || noImage} alt={item.name} className='w-[100px] h-[100px] object-cover rounded-[10px]' />
+                          <h3 className='text-[20px] font-medium mb-[10px] line-clamp-3'>{item.name}</h3>
+                        </div>
+                        <div className='flex items-center justify-between'>
                           <p className='text-[18px] font-medium text-[#3E3E3E] '> {item.price} {translations.basket.sum} </p>
                           <p className='text-[16px] text-gray-600'>{translations.basket.count}: <span className='font-medium text-[#3E3E3E]'>{item.quantity} ta</span></p>
+                        </div>
+                        <div>
                           <p className='text-[16px] font-medium text-[#3E3E3E]'> {translations.basket.total}: <span className='text-pink-500'>{(typeof item.price === 'string' ? parseInt(item.price) : item.price) * item.quantity} so'm</span></p>
                         </div>
                       </div>
@@ -645,7 +649,7 @@ const Basket = () => {
                         <div className='flex items-center gap-2'>
                           <InputNumber min={1} value={item.quantity} onChange={(value) => handleUpdateQuantity(item.id, value || 1)} className='w-[80px]' />
                         </div>
-                        <Button type="primary" danger icon={<DeleteOutlined />} onClick={() => handleRemoveFromBasket(item.id)} className='!bg-gradient-to-r from-red-500 to-pink-500 hover:from-red-600 hover:to-pink-600 border-none'> O'chirish </Button>
+                        <Button type="primary" danger icon={<DeleteOutlined />} onClick={() => handleRemoveFromBasket(item.id)} className='!bg-gradient-to-r from-red-500 to-pink-500 hover:from-red-600 hover:to-pink-600 border-none'> {translations.basket.deleteButton} </Button>
                       </div>
                     </div>
                   ))
@@ -656,7 +660,7 @@ const Basket = () => {
                   <h2 className='text-[24px] font-bold'> {translations.basket.total}: <span className='text-pink-500'>{calculateTotal()} {translations.basket.sum}</span> </h2>
                   <p className='text-[16px] text-gray-600'>{basketCount} {translations.basket.count}</p>
                 </div>
-                <Button type="primary" size="large" onClick={handlePlaceOrder} className='max-w-[200px] mt-[20px] !bg-gradient-to-r from-pink-500 to-red-500 hover:from-pink-600 hover:to-red-600 border-none'> {translations.basket.toOrder} </Button>
+                <Button type="primary" size="large" onClick={handlePlaceOrder} className='w-full mt-[20px] !bg-gradient-to-r from-pink-500 to-red-500 hover:from-pink-600 hover:to-red-600 border-none'> {translations.basket.toOrder} </Button>
               </div>
             </>
           ) : (

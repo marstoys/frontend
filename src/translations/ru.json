@@ -45,7 +45,8 @@
     "count": "Количество",
     "total": "Итого",
     "deleteButton": "Удалить",
-    "toOrder": "Оформить заказ"
+    "toOrder": "Оформить заказ",
+    "totalProduct": "шт."
   },
   "order": {
     "allOrder": "Все заказы",

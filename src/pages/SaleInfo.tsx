@@ -42,7 +42,7 @@ const SaleInfo = () => {
   const [orders, setOrders] = useState<OrderItem[]>([]);
   const [totalPrice, setTotalPrice] = useState(0);
   const [confirmationCode, setConfirmationCode] = useState<boolean>(false)
-  const [usersPhone, setUsersPhone] = useState<string>('1')
+  const [usersPhone, setUsersPhone] = useState<string>('+998')
   const [isloading, setIsLoading] = useState<boolean>(false)
 
   useEffect(() => {
@@ -86,6 +86,9 @@ const SaleInfo = () => {
     const phone = (form.elements.namedItem('phone') as HTMLInputElement).value;
     const address = (form.elements.namedItem('address') as HTMLInputElement).value;
 
+    // Format phone number for backend (remove + and spaces)
+    const formattedPhone = phone.replace(/[+\s]/g, '');
+
     const simpleItems: SimpleOrderItem[] = orders.flatMap(Ordersitem =>
       Ordersitem.items?.map(item => ({
         product: item.id,
@@ -97,7 +100,7 @@ const SaleInfo = () => {
     const LastData: LastOrderType = {
       buyer_name: firstName,
       buyer_surname: lastName,
-      Phone_number: phone,
+      Phone_number: formattedPhone,
       address: address,
       total_price: totalPrice,
       payment_method: 'karta',
@@ -114,9 +117,9 @@ const SaleInfo = () => {
 
     // If no token, proceed with registration
     setConfirmationCode(true);
-    setUsersPhone(phone);
+    setUsersPhone(formattedPhone);
     const Verifydata: { phone_number: string; } = {
-      phone_number: phone,
+      phone_number: formattedPhone,
     };
 
     instance.post(`users/register/`, Verifydata).then(res => {
@@ -191,7 +194,7 @@ const SaleInfo = () => {
           <div className="flex flex-col md:flex-row gap-6 relative">
             <div className="flex-1">
               <div className="bg-white rounded-lg shadow-sm border border-gray-200 p-6 mb-6">
-                <form id='profleForm' onSubmit={handleProfileSubmit}>
+                <form id='profileForm' onSubmit={handleProfileSubmit}>
                   <div className="flex flex-col md:flex-row gap-4 mb-6">
                     <div className="space-y-2 flex-1">
                       <label htmlFor="firstName" className="block text-sm font-medium text-gray-700">
@@ -229,7 +232,8 @@ const SaleInfo = () => {
                       id="phone"
                       name="phone"
                       type="text"
-                      placeholder="998 - (__)- ___ - __ - __"
+                      defaultValue="+998"
+                      placeholder="+998 - (__)- ___ - __ - __"
                       required
                       className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
                     />
@@ -248,6 +252,13 @@ const SaleInfo = () => {
                       className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
                     />
                   </div>
+
+                  <button
+                    type="submit"
+                    className="w-full cursor-pointer bg-blue-600 hover:bg-blue-700 text-white font-medium py-2 px-4 rounded-md transition-colors"
+                  >
+                    {translations.saleInfo.payment}
+                  </button>
                 </form>
               </div>
               {orders.length > 0 && orders[orders.length - 1].items?.map((item, index) => (
@@ -292,7 +303,7 @@ const SaleInfo = () => {
                     </div>
                     <button
                       type="submit"
-                      form='profleForm'
+                      form='profileForm'
                       className="w-full cursor-pointer bg-blue-600 hover:bg-blue-700 text-white font-medium py-2 px-4 rounded-md transition-colors"
                     >
                       {translations.saleInfo.payment}
@@ -331,7 +342,7 @@ const SaleInfo = () => {
           <div className="flex flex-col md:flex-row gap-6 relative">
             <div className="flex-1">
               <div className="bg-white rounded-lg shadow-sm border border-gray-200 p-6 mb-6">
-                <form id='profleForm' onSubmit={handleProfileSubmit}>
+                <form id='profileForm' onSubmit={handleProfileSubmit}>
                   <div className="flex flex-col md:flex-row gap-4 mb-6">
                     <div className="space-y-2 flex-1">
                       <label htmlFor="firstName" className="block text-sm font-medium text-gray-700">
@@ -369,6 +380,7 @@ const SaleInfo = () => {
                       id="phone"
                       name="phone"
                       type="text"
+                      defaultValue="+998"
                       placeholder="+998 - (__)- ___ - __ - __"
                       required
                       className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
@@ -388,6 +400,13 @@ const SaleInfo = () => {
                       className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
                     />
                   </div>
+
+                  <button
+                    type="submit"
+                    className="w-full bg-blue-600 hover:bg-blue-700 text-white font-medium py-2 px-4 rounded-md transition-colors"
+                  >
+                    {translations.saleInfo.payment}
+                  </button>
                 </form>
               </div>
               {orders.length > 0 && orders[orders.length - 1].items?.map((item, index) => (
@@ -432,8 +451,8 @@ const SaleInfo = () => {
                     </div>
                     <button
                       type="submit"
-                      form='profleForm'
-                      className="w-full bg-blue-600 hover:bg-blue-700 text-white font-medium py-2 px-4 rounded-md transition-colors"
+                      form='profileForm'
+                      className="w-full cursor-pointer bg-blue-600 hover:bg-blue-700 text-white font-medium py-2 px-4 rounded-md transition-colors"
                     >
                       {translations.saleInfo.payment}
                     </button>
@@ -470,7 +489,7 @@ const SaleInfo = () => {
           <div className="flex flex-col md:flex-row gap-6 relative">
             <div className="flex-1">
               <div className="bg-white rounded-lg shadow-sm border border-gray-200 p-6 mb-6">
-                <form id='profleForm' onSubmit={handleProfileSubmit}>
+                <form id='profileForm' onSubmit={handleProfileSubmit}>
                   <div className="flex flex-col md:flex-row gap-4 mb-6">
                     <div className="space-y-2 flex-1">
                       <label htmlFor="firstName" className="block text-sm font-medium text-gray-700">
@@ -508,6 +527,7 @@ const SaleInfo = () => {
                       id="phone"
                       name="phone"
                       type="text"
+                      defaultValue="+998"
                       placeholder="+998 - (__)- ___ - __ - __"
                       required
                       className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
@@ -527,6 +547,13 @@ const SaleInfo = () => {
                       className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
                     />
                   </div>
+
+                  <button
+                    type="submit"
+                    className="w-full bg-blue-600 hover:bg-blue-700 text-white font-medium py-2 px-4 rounded-md transition-colors"
+                  >
+                    {translations.saleInfo.payment}
+                  </button>
                 </form>
               </div>
               {orders.length > 0 && orders[orders.length - 1].items?.map((item, index) => (
@@ -569,7 +596,12 @@ const SaleInfo = () => {
                         <span>{totalPrice} {translations.saleInfo.money}</span>
                       </div>
                     </div>
-                    <button type="submit" form='profleForm' className="w-full bg-blue-600 hover:bg-blue-700 text-white font-medium py-2 px-4 rounded-md transition-colors"> {translations.saleInfo.payment}
+                    <button
+                      type="submit"
+                      form='profileForm'
+                      className="w-full bg-blue-600 hover:bg-blue-700 text-white font-medium py-2 px-4 rounded-md transition-colors"
+                    >
+                      {translations.saleInfo.payment}
                     </button>
                   </div>
                 </div>
