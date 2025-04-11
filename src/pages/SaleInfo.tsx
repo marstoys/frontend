@@ -9,7 +9,6 @@ import SiteLogo from "../assets/images/SiteLogo.svg"
 import { useBasket } from '../Context/Context'
 import { useLanguage } from '../Context/LanguageContext'
 
-
 interface OrderItem {
   id: number;
   items: (ProductsType & { quantity: number })[];
@@ -45,97 +44,102 @@ const SaleInfo = () => {
   const [usersPhone, setUsersPhone] = useState<string>('+998')
   const [isloading, setIsLoading] = useState<boolean>(false)
 
-  useEffect(() => {
-    if (token && data) {
-      setIsLoading(true);
-      instance.post(`shop/order-product/`, data, {
-        headers: { 'Authorization': `Bearer ${token}` }
-      }).then(res => {
+  // Order yuborish uchun umumiy funksiya
+  const submitOrder = (orderData: LastOrderType, accessToken: string) => {
+    setIsLoading(true);
+    instance.post(`shop/order-product/`, orderData, {
+      headers: { Authorization: `Bearer ${accessToken}` }
+    })
+      .then(res => {
         window.location.replace(res.data.payment_link);
         localStorage.removeItem("basket");
         localStorage.removeItem("orders");
-        setIsLoading(false);
-      }).catch(error => {
+      })
+      .catch(error => {
         console.error("Order error:", error);
+      })
+      .finally(() => {
         setIsLoading(false);
       });
-    }
-  }, [token, data]);
+  }
 
-  // Form submit
+  // Mahsulotlar localStoragedan olish
   useEffect(() => {
     const savedOrders = localStorage.getItem('orders');
     if (savedOrders) {
       const parsedOrders = JSON.parse(savedOrders);
       setOrders(parsedOrders);
-
-      // Calculate total price
       const total = parsedOrders.reduce((sum: number, order: OrderItem) => {
         return sum + order.totalPrice;
       }, 0);
       setTotalPrice(total);
     }
   }, []);
+
+  // Formani yuborish
   function handleProfileSubmit(e: FormEvent<HTMLFormElement>) {
     e.preventDefault();
     const form = e.target as HTMLFormElement;
-
-    // Get form values directly
     const firstName = (form.elements.namedItem('firstName') as HTMLInputElement).value;
     const lastName = (form.elements.namedItem('lastName') as HTMLInputElement).value;
     const phone = (form.elements.namedItem('phone') as HTMLInputElement).value;
     const address = (form.elements.namedItem('address') as HTMLInputElement).value;
-
-    // Format phone number for backend (remove + and spaces)
     const formattedPhone = phone.replace(/[+\s]/g, '');
 
-    const simpleItems: SimpleOrderItem[] = orders.flatMap(Ordersitem =>
-      Ordersitem.items?.map(item => ({
+    const simpleItems: SimpleOrderItem[] = orders.flatMap(order =>
+      order.items.map(item => ({
         product: item.id,
         quantity: item.quantity
       }))
     );
 
-    // Create LastData with direct form values
     const LastData: LastOrderType = {
       buyer_name: firstName,
       buyer_surname: lastName,
       phone_number: formattedPhone,
-      address: address,
+      address,
       total_price: totalPrice,
       payment_method: 'karta',
       items: simpleItems
     }
 
-    // Set data with the direct values
-    setData(LastData);
-
-    // If user has token, proceed directly to order
     if (token) {
-      return;
+      submitOrder(LastData, token); // Token bo‘lsa — to‘g‘ridan to‘g‘ri yubor
+    } else {
+      setData(LastData); // Login bo‘lgandan keyin yuborish uchun saqlaymiz
+      setConfirmationCode(true);
+      setUsersPhone(formattedPhone);
+      instance.post(`users/register/`, { phone_number: formattedPhone })
+        .then(res => console.log(res.data));
+    }
+  }
+
+  // Login va OTP yuborilganda
+  function HandleLoginSubmit(e: FormEvent<HTMLFormElement>) {
+    e.preventDefault();
+    const loginData = {
+      phone_number: usersPhone,
+      otp: (e.target as HTMLFormElement).confirmationCode.value
     }
 
-    // If no token, proceed with registration
-    setConfirmationCode(true);
-    setUsersPhone(formattedPhone);
-    const Verifydata: { phone_number: string; } = {
-      phone_number: formattedPhone,
-    };
+    instance.post(`users/login/`, loginData)
+      .then(res => {
+        const access = res.data.access_token;
+        localStorage.setItem("access_token", access);
+        localStorage.setItem("refresh_token", res.data.refresh_token);
+        setToken(access);
+        setConfirmationCode(false);
 
-    instance.post(`users/register/`, Verifydata).then(res => {
-      console.log(res.data);
-    })
+        if (data) {
+          submitOrder(data, access); // Login'dan keyin order yuboriladi
+        }
+      })
+      .catch(error => {
+        console.error("Login error:", error);
+      });
   }
-  // Form submit
 
-  // ConfirmationCode
-  function handleConfirmationCode(e: React.MouseEvent<HTMLElement>) {
-    e.preventDefault();
-    console.log(e);
-  }
-  // ConfirmationCode
-
-  // Clockdown 
+  // SMS code countdown
   const [timeLeft, setTimeLeft] = useState(300);
   useEffect(() => {
     const timer = setInterval(() => {
@@ -146,40 +150,14 @@ const SaleInfo = () => {
         return prevTime - 1;
       });
     }, 1000);
-
     return () => clearInterval(timer);
   }, []);
 
-  function HandleLoginSubmit(e: FormEvent<HTMLFormElement>) {
-    e.preventDefault()
-    const loginData = {
-      phone_number: usersPhone,
-      otp: (e.target as HTMLFormElement).confirmationCode.value
-    }
-
-    // Get the current data value
-    const currentData = data;
-
-    instance.post(`users/login/`, loginData).then(res => {
-      setConfirmationCode(false)
-      // Store both access and refresh tokens
-      localStorage.setItem('access_token', res.data.access_token);
-      localStorage.setItem('refresh_token', res.data.refresh_token);
-      setToken(res.data.access_token);
-      setTimeout(() => {
-        if (currentData) {
-          instance.post(`shop/order-product/`, currentData, {
-            headers: { 'Authorization': `Bearer ${res.data.access_token}` }
-          }).then(res => {
-            window.location.replace(res.data.payment_link);
-            localStorage.removeItem("basket");
-            localStorage.removeItem("orders");
-          })
-        }
-      }, 100);
-    })
+  // SMS confirmation bosilganda (agar kerak bo‘lsa)
+  function handleConfirmationCode(e: React.MouseEvent<HTMLElement>) {
+    e.preventDefault();
+    console.log(e);
   }
-
   return (
     <div>
       <Header />
