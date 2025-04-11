@@ -1,4 +1,3 @@
-import React from 'react'
 import { InstagramIcon, TelegramIcon } from '../assets/Icon'
 import { Link } from 'react-router-dom'
 import { useLanguage } from '../Context/LanguageContext';

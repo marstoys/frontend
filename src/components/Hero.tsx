@@ -1,4 +1,3 @@
-import React from 'react'
 import HeroTitle from "../assets/images/heroTitle.png"
 import { useNavigate } from 'react-router-dom'
 import { PATH } from '../hook/usePath'

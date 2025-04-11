@@ -307,7 +307,7 @@ const SaleInfo = () => {
               <div className='w-[500px] h-[350px] backdrop-blur-3xl p-5 border-[2px] block mx-auto mt-[100px] border-blue-400 rounded-[20px]'>
                 <img className='w-[70px] h-[70px] block mx-auto' src={SiteLogo} alt='siteLogo' width={70} height={70} />
                 <form onSubmit={HandleLoginSubmit} className="w-[300px] block mt-10 mx-auto text-sm font-medium text-gray-700 text-center">
-                  <p>{translations.saleInfo.veifySms}</p>
+                  <p>{translations.saleInfo.verifySms}</p>
                   <p>({timeLeft}) {translations.saleInfo.addVerifyCode}</p>
                   {timeLeft === 0 && <button className='w-[300px] py-[5px] rounded-[10px] border-[1px] border-black mt-[20px] cursor-pointer' onClick={() => setConfirmationCode(false)}>{translations.saleInfo.verifyCodeAdd}</button>}
                   <input onClick={handleConfirmationCode} name="confirmationCode" type='number' placeholder="Tasdiqlash ko'dini kiritish..." required className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 mt-4" />
@@ -447,7 +447,7 @@ const SaleInfo = () => {
               <div className='w-[500px] h-[350px] backdrop-blur-3xl p-5 border-[2px] block mx-auto mt-[100px] border-blue-400 rounded-[20px]'>
                 <img className='w-[70px] h-[70px] block mx-auto' src={SiteLogo} alt='siteLogo' width={70} height={70} />
                 <form onSubmit={HandleLoginSubmit} className="w-[300px] block mt-10 mx-auto text-sm font-medium text-gray-700 text-center">
-                  <p>{translations.saleInfo.veifySms}</p>
+                  <p>{translations.saleInfo.verifySms}</p>
                   <p>({timeLeft}) {translations.saleInfo.addVerifyCode}</p>
                   {timeLeft === 0 && <button className='w-[300px] py-[5px] rounded-[10px] border-[1px] border-black mt-[20px] cursor-pointer' onClick={() => setConfirmationCode(false)}>{translations.saleInfo.verifyCodeAdd}</button>}
                   <input onClick={handleConfirmationCode} name="confirmationCode" type='number' placeholder="Tasdiqlash ko'dini kiritish..." required className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 mt-4" />
@@ -565,7 +565,7 @@ const SaleInfo = () => {
                     </div>
                     <div className="border-t border-gray-200 pt-4 mt-4">
                       <div className="flex justify-between font-semibold">
-                        <span>{translations.order.total}</span>
+                        <span>{translations.order.totalPrice}</span>
                         <span>{totalPrice} {translations.order.sum}</span>
                       </div>
                     </div>
@@ -581,7 +581,7 @@ const SaleInfo = () => {
               <div className='w-[350px] h-[350px] backdrop-blur-3xl p-5 border-[2px] block mx-auto mt-[50px] border-blue-400 rounded-[20px]'>
                 <img className='w-[70px] h-[70px] block mx-auto' src={SiteLogo} alt='siteLogo' width={70} height={70} />
                 <form onSubmit={HandleLoginSubmit} className="w-[300px] block mt-10 mx-auto text-sm font-medium text-gray-700 text-center">
-                  <p>{translations.saleInfo.veifySms}</p>
+                  <p>{translations.saleInfo.verifySms}</p>
                   <p>({timeLeft}) {translations.saleInfo.addVerifyCode}</p>
                   {timeLeft === 0 && <button className='w-[300px] py-[5px] rounded-[10px] border-[1px] border-black mt-[20px] cursor-pointer' onClick={() => setConfirmationCode(false)}>{translations.saleInfo.verifyCodeAdd}</button>}
                   <input onClick={handleConfirmationCode} name="confirmationCode" type='number' placeholder="Tasdiqlash ko'dini kiritish..." required className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 mt-4" />

@@ -4,7 +4,7 @@ import { Navigation, Pagination, Autoplay, EffectCoverflow } from "swiper/module
 import ToysImg from "../../assets/images/toysImg.png"
 import Toys2Img from "../../assets/images/legoToysImg.png"
 import Toys3Img from "../../assets/images/toys3img.png"
-import Toys4Img from "../../assets/images/toys4img.png"
+import Toys4Img from "../../assets/images/toys4Img.png"
 import Toys5Img from "../../assets/images/toys5img.png"
 import "swiper/css";
 import "swiper/css/navigation";
