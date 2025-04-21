@@ -11,7 +11,6 @@ import "swiper/css/navigation";
 import "swiper/css/pagination";
 import "swiper/css/effect-coverflow";
 import "./Carusel.css";
-import { PATH } from "../../hook/usePath";
 import { useLanguage } from "../../Context/LanguageContext";
 
 

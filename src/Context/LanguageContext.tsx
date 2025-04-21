@@ -54,6 +54,14 @@ interface Translation {
     deleteButton: string;
     toOrder: string;
     totalProduct: string;
+    writeComment: string;
+    commentModalTitle: string;
+    commentModalButton: string;
+    commentModalCancel: string;
+    commentModalInputPlaceholder: string;
+    commentNotFound: string;
+    emptyBasket: string;
+    like: string;
   };
   order: {
     allOrder: string;
@@ -65,6 +73,13 @@ interface Translation {
     deliveryDate: string;
     submittedAddress: string;
     totalPrice: string;
+    product: string;
+    price: string;
+    quantity: string;
+    name: string;
+    order: string;
+    productCount: string;
+    count: string;
   };
   saleInfo: {
     formName: string;

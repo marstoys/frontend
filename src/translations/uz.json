@@ -1,92 +1,107 @@
 {
   "header": {
     "home": "Bosh sahifa",
-    "allProducts": "Barcha Mahsulotlar",
+    "allProducts": "Mahsulotlar",
     "basket": "Savatcha",
     "orders": "Buyurtmalar",
     "search": "Mahsulotni izlash",
-    "catalog": "Barcha Mahsulotlar",
-    "myOrders": "Buyurtmalarim"
+    "catalog": "Katalog",
+    "myOrders": "Mening buyurtmalarim"
   },
   "footer": {
     "aboutUs": "Biz haqimizda",
     "address": "Manzil: O'rikzor bozori, Gilam bozor / Samarbonu 39A/1",
     "phoneNumber": "Telefon raqami",
     "copyright": "2025 MARSTOYS - IJOD AGENCY",
-    "socialMedia": "Ijtimoiy tarmoqda"
+    "socialMedia": "Ijtimoiy tarmoq"
   },
   "Hero": {
     "subtitle": "O'yinchoqlar eng yaxshi narxda",
-    "buttonText": "Xaridlarga"
+    "buttonText": "Xarid qilish"
   },
   "allProducts": {
-    "title": "Barcha Mahsulotlar",
-    "productsFound": "ta Mahsulotlar topildi",
-    "all": "Barcha uchun",
-    "men": "O'gil Bolalar O'yinchoqlarini",
-    "girl": "Qiz Bolalar O'yinchoqlarini",
-    "view": "ko'rish",
-    "loading": "Malumotlar yuklanmoqda",
-    "buyNow": "Harid Qilish"
+    "title": "Mahsulotlar",
+    "productsFound": "ta mahsulot topildi",
+    "all": "Barcha uchun o'yinchoqlar",
+    "men": "O'g'il bolalar o'yinchoqlari",
+    "girl": "Qiz bolalar o'yinchoqlari",
+    "view": "Ko'rish",
+    "loading": "Ma'lumot yuklanmoqda",
+    "buyNow": "Sotib olish"
   },
   "basket": {
     "company": "Kompaniya",
-    "rating": "baho",
-    "timesSold": "marta sotib olingan",
-    "commentTitle": "Mahsulot haqida ma'lumot",
+    "rating": "Baholash",
+    "timesSold": "marta sotilgan",
+    "commentTitle": "Mahsulot haqidagi fikrlar",
     "comment": "Sharhlar",
     "sum": "so'm",
-    "addToCart": "Savatchaga qo'shildi",
-    "noProductSelected": "Hozircha O'yinchoq tanlamagansiz",
+    "addToCart": "Savatchaga qo'shish",
+    "noProductSelected": "Hozircha mahsulot tanlanmagan",
     "buyToy": "O'yinchoq sotib olish",
     "backtoButton": "Orqaga qaytish",
-    "backtoSale": "Sotuvlarga qaytish",
+    "backtoSale": "Sotuvga qaytish",
     "saleTitle": "Sizning savatchingiz",
-    "count": "Miqdori o'zgartirildi",
+    "count": "Miqdor",
     "total": "Jami",
     "deleteButton": "O'chirish",
-    "toOrder": "Buyurtma Berish",
-    "totalProduct": "ta mahsulot"
+    "toOrder": "Buyurtma berish",
+    "totalProduct": "ta mahsulot",
+    "writeComment": "Sharh yozish",
+    "commentModalTitle": "O'yinchoq haqida fikr yozing",
+    "commentModalButton": "Yuborish",
+    "commentModalCancel": "Bekor qilish",
+    "commentModalInputPlaceholder": "Sharh yozing",
+    "commentNotFound": "Sharhlar mavjud emas",
+    "emptyBasket": "Savatcha bo'sh",
+    "like": "Yoqtirish"
   },
   "order": {
-    "allOrder": "Barcha Buyurtmalar",
+    "allOrder": "Barcha buyurtmalar",
     "active": "Faol",
-    "BuyerName": "Buyurtma Egasi",
-    "ProductName": "Buyurtma Nomi",
-    "status": "Holat",
+    "BuyerName": "Buyurtma egasi: ",
+    "ProductName": "Mahsulot nomi: ",
+    "status": "Holat: ",
     "money": "so'm",
-    "deliveryDate": "Yetkazib berilgan sana",
-    "submittedAddress": "Topshirilgan manzil",
-    "totalPrice": "Buyurtma qiymati"
+    "deliveryDate": "Yetkazib berilgan sana: ",
+    "submittedAddress": "Topshirilgan manzil: ",
+    "totalPrice": "Buyurtma narxi: ",
+    "productCount": "xil turdagi mahsulotlar",
+    "product": "Mahsulot",
+    "price": "Narx",
+    "quantity": "Miqdor",
+    "name": "Nomi",
+    "order": "Buyurtma",
+    "count": "Dona"
   },
   "saleInfo": {
     "formName": "Ism",
     "formSurname": "Familiya",
     "phoneNumber": "Telefon raqami",
-    "address": "Buyurtmani yetkazish manzili",
+    "address": "Buyurtma manzili",
     "ordery": "Buyurtmangiz",
     "products": "Mahsulotlar",
-    "count": "dona",
+    "count": "Dona",
     "total": "Jami",
-    "processingOrders": "Buyurtmani Rasmiylashtirish",
+    "processingOrders": "Buyurtmani tasdiqlash",
     "money": "so'm",
-    "productCount": "Miqdori",
-    "verifySms": "Sizga tadiqlash Ko'di yuborildi",
-    "addVerifyCode": "sekund ichida Tasdiqlash ko'dini kiriting",
-    "verifyCodeAdd": "Tasdiqlash kodini kiritish",
+    "productCount": "Miqdor",
+    "verifySms": "Tasdiqlash kodi yuborildi",
+    "addVerifyCode": "Tasdiqlash kodini kiriting",
+    "verifyCodeAdd": "Kodni kiriting",
     "verifyCodeButtonText": "Yuborish",
-    "payment": "To'lov qilish",
-    "verifyCode": "Tasdiqlash ko'dini kiriting"
+    "payment": "To'lovni amalga oshirish",
+    "verifyCode": "Tasdiqlash kodini kiriting"
   },
   "newProducts": {
     "title": "Yangi mahsulotlar",
-    "buyText":"Harid Qilish",
-    "allProductsButtonTxt":"Barchasini Ko'rish"
+    "buyText": "Sotib olish",
+    "allProductsButtonTxt": "Barchasini ko'rish"
   },
   "catalog": {
     "title": "O'yinchoqlar"
   },
   "common": {
-    "loading": "Malumotlar yuklanmoqda"
+    "loading": "Ma'lumot yuklanmoqda"
   }
 }

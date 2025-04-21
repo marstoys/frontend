@@ -31,7 +31,7 @@ const Header = () => {
     return (
         <>
             {/* Desktop Header */}
-            <header className='hidden lg:block'>
+            <header className='max-w-full hidden lg:block'>
                 <div className='max-w-[1476px] mx-auto px-4 md:px-6 lg:px-8 mt-4 md:mt-6 lg:mt-[24px] mb-4 md:mb-6 lg:mb-[31px] flex items-center justify-between overflow-hidden'>
                     <div className='flex items-center gap-4 md:gap-6 lg:gap-[70px]'>
                         <Link className='flex items-center gap-2 md:gap-3 lg:gap-[12px]' to='mailto:Corleonevito6670@gmail.com'>
@@ -52,15 +52,15 @@ const Header = () => {
                         </Link>
                     </div>
                 </div>
-                <div className='w-full pt-[3px] pb-[7px] bg-[#EEEEEE]'>
+                <div className='max-w-full pt-[3px] pb-[7px] bg-[#EEEEEE]'>
                     <div className='max-w-[1476px] mx-auto px-4 md:px-6 lg:px-8'>
                         <div className='flex items-center justify-between'>
                             <Link to={'/'}><img className='w-16 md:w-20 lg:w-[80px] h-16 md:h-20 lg:h-[80px]' src={SiteLogo} alt="SiteLogo" /></Link>
-                            <ul className='flex items-center gap-6 md:gap-8 lg:gap-[100px]'>
-                                <li><NavLink className='font-medium text-lg md:text-xl lg:text-[28px] leading-[22px] text-[#3E3E3E]' to={PATH.home}>{translations.header.home}</NavLink></li>
-                                <li><NavLink className='font-medium text-lg md:text-xl lg:text-[28px] leading-[22px] text-[#3E3E3E]' to={PATH.allproducts}>{translations.header.allProducts}</NavLink></li>
-                                <li><NavLink className='font-medium text-lg md:text-xl lg:text-[28px] leading-[22px] text-[#3E3E3E]' to={PATH.basket}>{translations.header.basket}</NavLink></li>
-                                <li><NavLink className='font-medium text-lg md:text-xl lg:text-[28px] leading-[22px] text-[#3E3E3E]' to={PATH.orders}>{translations.header.orders}</NavLink></li>
+                            <ul className='flex items-center gap-[50px] customWidth:gap-[100px]'>
+                                <li><NavLink className='font-medium text-lg text-[18px] customWidth:text-[23px] customWidth:text-[28px] leading-[22px] text-[#3E3E3E]' to={PATH.home}>{translations.header.home}</NavLink></li>
+                                <li><NavLink className='font-medium text-lg text-[18px] customWidth:text-[23px] customWidth:text-[28px] leading-[22px] text-[#3E3E3E]' to={PATH.allproducts}>{translations.header.allProducts}</NavLink></li>
+                                <li><NavLink className='font-medium text-lg text-[18px] customWidth:text-[23px] customWidth:text-[28px] leading-[22px] text-[#3E3E3E]' to={PATH.basket}>{translations.header.basket}</NavLink></li>
+                                <li><NavLink className='font-medium text-lg text-[18px] customWidth:text-[23px] customWidth:text-[28px] leading-[22px] text-[#3E3E3E]' to={PATH.orders}>{translations.header.orders}</NavLink></li>
                             </ul>
                             <div className='flex items-center gap-4 md:gap-6 lg:gap-[35px]'>
                                 <div className='cursor-pointer relative'>

@@ -16,17 +16,17 @@
     "socialMedia": "Social Media"
   },
   "Hero": {
-    "subtitle": "Toys at the best price",
+    "subtitle": "Toys at the Best Price",
     "buttonText": "Shop Now"
   },
   "allProducts": {
     "title": "All Products",
     "productsFound": "products found",
-    "all": "all",
+    "all": "Toys for all",
     "men": "Boys' Toys",
     "girl": "Girls' Toys",
-    "view": "view",
-    "loading": "Loading data",
+    "view": "View",
+    "loading": "Loading Data",
     "buyNow": "Buy Now"
   },
   "basket": {
@@ -35,7 +35,7 @@
     "timesSold": "times sold",
     "commentTitle": "Product Information",
     "comment": "Reviews",
-    "sum": "sum",
+    "sum": "Total",
     "addToCart": "Add to Cart",
     "noProductSelected": "No toy selected yet",
     "buyToy": "Buy Toy",
@@ -46,7 +46,15 @@
     "total": "Total",
     "deleteButton": "Delete",
     "toOrder": "Place Order",
-    "totalProduct": "pcs."
+    "totalProduct": "pcs.",
+    "writeComment": "Write a Comment",
+    "commentModalTitle": "Write a Comment About This Toy",
+    "commentModalButton": "Send",
+    "commentModalCancel": "Cancel",
+    "commentModalInputPlaceholder": "Write a comment",
+    "commentNotFound": "Comments not found",
+    "emptyBasket": "Your Basket is Empty",
+    "like": "Like"
   },
   "order": {
     "allOrder": "All Orders",
@@ -57,7 +65,14 @@
     "deliveryDate": "Delivery Date",
     "submittedAddress": "Submitted Address",
     "totalPrice": "Order Price",
-    "money": "sum"
+    "money": "Total",
+    "product": "Product",
+    "price": "Price",
+    "quantity": "Quantity",
+    "name": "Name",
+    "order": "Order",
+    "count": "pcs.",
+    "productCount": "Quantity"
   },
   "saleInfo": {
     "formName": "First Name",
@@ -69,7 +84,7 @@
     "count": "pieces",
     "total": "Total",
     "processingOrders": "Processing Order",
-    "money": "sum",
+    "money": "Total",
     "productCount": "Quantity",
     "verifySms": "A verification code has been sent to you",
     "addVerifyCode": "Enter the verification code within seconds",
@@ -87,6 +102,6 @@
     "title": "Toys"
   },
   "common": {
-    "loading": "Loading data"
+    "loading": "Loading Data"
   }
 }

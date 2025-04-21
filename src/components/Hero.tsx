@@ -10,7 +10,7 @@ const Hero = () => {
     return (
         <>
             {/* Desktop hero */}
-            <div className='hidden lg:block HeroBg relative overflow-hidden px-8 py-[300px]'>
+            <div className='hidden lg:block HeroBg relative overflow-hidden px-8 py-[150px]'>
                 <div className='w-[1476px] h-[51vh] overflow-y-hidden mx-auto'>
                     <img className='w-[556px] h-auto mb-[55px]' src={HeroTitle} alt="HeroTitle" width={556} height={137} />
                     <p className='font-regular text-[24px] text-white mb-[51px]'>
