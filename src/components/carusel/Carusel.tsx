@@ -1,4 +1,3 @@
-import React from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Pagination, Autoplay, EffectCoverflow } from "swiper/modules";
 import ToysImg from "../../assets/images/toysImg.png"
@@ -6,10 +5,8 @@ import Toys2Img from "../../assets/images/legoToysImg.png"
 import Toys3Img from "../../assets/images/toys3img.png"
 import Toys4Img from "../../assets/images/toys4Img.png"
 import Toys5Img from "../../assets/images/toys5Img.png"
-import "swiper/css";
-import "swiper/css/navigation";
-import "swiper/css/pagination";
-import "swiper/css/effect-coverflow";
+import "swiper/swiper-bundle.css";
+
 import "./Carusel.css";
 import { useLanguage } from "../../Context/LanguageContext";
 
