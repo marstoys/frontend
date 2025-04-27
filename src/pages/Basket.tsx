@@ -3,7 +3,7 @@ import Header from '../components/Header'
 import { useNavigate, useParams } from 'react-router-dom'
 import { instance } from '../hook/Instance'
 import { CommentType, ProductsType } from '../components/NewProducts'
-import { Button, Empty, Input, InputNumber, Modal } from 'antd'
+import { Button, Empty,  InputNumber, Modal } from 'antd'
 import { StarFilled, ShoppingOutlined, LeftOutlined, RightOutlined, DeleteOutlined, ArrowLeftOutlined, CommentOutlined, } from '@ant-design/icons'
 import { PATH } from '../hook/usePath'
 import { useBasket } from '../Context/Context'
@@ -18,9 +18,7 @@ interface Order {
   date: string;
 }
 
-interface BasketItem extends ProductsType {
-  quantity: number;
-}
+
 interface RatingCommentType {
   comment?: string;
   rating?: number;

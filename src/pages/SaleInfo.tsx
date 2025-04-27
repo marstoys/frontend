@@ -1,6 +1,5 @@
 import React, {FormEvent, useEffect, useState} from 'react'
 import Header from '../components/Header'
-import Footer from '../components/Footer'
 import {Image, Spin} from 'antd'
 import noImage from "../assets/images/noImage.jpg"
 import {ProductsType} from '../components/NewProducts'
