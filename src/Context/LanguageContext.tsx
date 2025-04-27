@@ -78,7 +78,7 @@ interface Translation {
     quantity: string;
     name: string;
     order: string;
-    productCount: "Product Count",
+    productCount: string;
     count: string;
   };
   saleInfo: {

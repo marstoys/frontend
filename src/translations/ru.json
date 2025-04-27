@@ -71,7 +71,8 @@
     "quantity": "Количество",
     "name": "Название",
     "order": "Заказ",
-    "count": "шт."
+    "count": "шт.",
+    "productCount": "Количество товаров"
   },
   "saleInfo": {
     "formName": "Имя",
