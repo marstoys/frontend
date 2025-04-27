@@ -81,15 +81,15 @@ const NewProducts = () => {
                                 <div className='px-[30px] py-[20px]'>
                                     <h3 className='font-medium text-[24px] mb-0 line-clamp-2'>{item.name}</h3>
 
+                                    <p className='font-medium text-[22px] text-[#3E3E3E]'>
+                                        {new Intl.NumberFormat('uz-UZ').format(Number(item.discounted_price))}
+                                    </p>
+
                                     {item.discount > 0 && (
                                         <del className='font-regular text-[18px] text-[#73808E]'>
                                             {new Intl.NumberFormat('uz-UZ').format(Number(item.price))}
                                         </del>
                                     )}
-
-                                    <p className='font-medium text-[22px] text-[#3E3E3E]'>
-                                        {new Intl.NumberFormat('uz-UZ').format(Number(item.discounted_price))}
-                                    </p>
                                 </div>
                                 <button
                                     className="product-card-button cursor-pointer w-[200px] py-[15px] block mx-auto mt-[18px] rounded-[12px] text-white font-medium text-[17px] bg-red-500 hover:bg-red-600 transition-colors">
@@ -127,15 +127,15 @@ const NewProducts = () => {
                                 <div className='px-[30px] py-[20px]'>
                                     <h3 className='font-medium text-[24px] mb-0 line-clamp-2'>{item.name}</h3>
 
+                                    <p className='font-medium text-[22px] text-[#3E3E3E]'>
+                                        {new Intl.NumberFormat('uz-UZ').format(Number(item.discounted_price))}
+                                    </p>
+
                                     {item.discount > 0 && (
                                         <del className='font-regular text-[18px] text-[#73808E]'>
                                             {new Intl.NumberFormat('uz-UZ').format(Number(item.price))}
                                         </del>
                                     )}
-
-                                    <p className='font-medium text-[22px] text-[#3E3E3E]'>
-                                        {new Intl.NumberFormat('uz-UZ').format(Number(item.discounted_price))}
-                                    </p>
                                 </div>
                                 <button
                                     className="product-card-button cursor-pointer w-[200px] py-[15px] block mx-auto rounded-[12px] text-white font-medium text-[17px]">
@@ -170,15 +170,15 @@ const NewProducts = () => {
                                 <div className='px-[30px] py-[20px]'>
                                     <h3 className='font-medium text-[24px] mb-0 line-clamp-2'>{item.name}</h3>
 
+                                    <p className='font-medium text-[22px] text-[#3E3E3E]'>
+                                        {new Intl.NumberFormat('uz-UZ').format(Number(item.discounted_price))}
+                                    </p>
+
                                     {item.discount > 0 && (
                                         <del className='font-regular text-[18px] text-[#73808E]'>
                                             {new Intl.NumberFormat('uz-UZ').format(Number(item.price))}
                                         </del>
                                     )}
-
-                                    <p className='font-medium text-[22px] text-[#3E3E3E]'>
-                                        {new Intl.NumberFormat('uz-UZ').format(Number(item.discounted_price))}
-                                    </p>
                                 </div>
                                 <button
                                     className="product-card-button cursor-pointer w-[130px] py-[5px] block mx-auto rounded-[12px] text-white font-medium text-[15px]">
