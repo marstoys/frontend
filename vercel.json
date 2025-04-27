@@ -1,0 +1,21 @@
+{
+  "version": 2,
+  "builds": [
+    {
+      "src": "package.json",
+      "use": "@vercel/node"
+    },
+    {
+      "src": "src/**/*.tsx",
+      "use": "@vercel/next"
+    }
+  ],
+  "scripts": {
+    "install": "npm install && npm audit fix",
+    "build": "tsc -b && vite build"
+  },
+  "env": {
+    "NODE_ENV": "production"
+  },
+  "outputDirectory": "dist"
+}
