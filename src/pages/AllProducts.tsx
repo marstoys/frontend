@@ -208,12 +208,12 @@ const AllProducts = () => {
 
                                                 {item.discount > 0 && (
                                                     <del className='font-regular text-[18px] text-[#73808E]'>
-                                                        {new Intl.NumberFormat('uz-UZ').format(item.price)}
+                                                        {new Intl.NumberFormat('uz-UZ').format(Number(item.price))}
                                                     </del>
                                                 )}
 
                                                 <p className='font-medium text-[22px] text-[#3E3E3E]'>
-                                                    {new Intl.NumberFormat('uz-UZ').format(item.discounted_price)}
+                                                    {new Intl.NumberFormat('uz-UZ').format(Number(item.discounted_price))}
                                                 </p>
                                             </div>
                                             <button
@@ -325,12 +325,12 @@ const AllProducts = () => {
 
                                                 {item.discount > 0 && (
                                                     <del className='font-regular text-[18px] text-[#73808E]'>
-                                                        {new Intl.NumberFormat('uz-UZ').format(item.price)}
+                                                        {new Intl.NumberFormat('uz-UZ').format(Number(item.price))}
                                                     </del>
                                                 )}
 
                                                 <p className='font-medium text-[22px] text-[#3E3E3E]'>
-                                                    {new Intl.NumberFormat('uz-UZ').format(item.discounted_price)}
+                                                    {new Intl.NumberFormat('uz-UZ').format(Number(item.discounted_price))}
                                                 </p>
                                             </div>
                                             <button
@@ -447,12 +447,12 @@ const AllProducts = () => {
 
                                                 {item.discount > 0 && (
                                                     <del className='font-regular text-[18px] text-[#73808E]'>
-                                                        {new Intl.NumberFormat('uz-UZ').format(item.price)}
+                                                        {new Intl.NumberFormat('uz-UZ').format(Number(item.price))}
                                                     </del>
                                                 )}
 
                                                 <p className='font-medium text-[22px] text-[#3E3E3E]'>
-                                                    {new Intl.NumberFormat('uz-UZ').format(item.discounted_price)}
+                                                    {new Intl.NumberFormat('uz-UZ').format(Number(item.discounted_price))}
                                                 </p>
                                             </div>
                                             <button

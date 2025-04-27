@@ -1,4 +1,3 @@
-import React from 'react'
 import Carusel from './carusel/Carusel'
 
 const Catalog = () => {

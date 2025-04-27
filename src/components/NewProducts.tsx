@@ -83,12 +83,12 @@ const NewProducts = () => {
 
                                     {item.discount > 0 && (
                                         <del className='font-regular text-[18px] text-[#73808E]'>
-                                            {new Intl.NumberFormat('uz-UZ').format(item.price)}
+                                            {new Intl.NumberFormat('uz-UZ').format(Number(item.price))}
                                         </del>
                                     )}
 
                                     <p className='font-medium text-[22px] text-[#3E3E3E]'>
-                                        {new Intl.NumberFormat('uz-UZ').format(item.discounted_price)}
+                                        {new Intl.NumberFormat('uz-UZ').format(Number(item.discounted_price))}
                                     </p>
                                 </div>
                                 <button
@@ -103,12 +103,11 @@ const NewProducts = () => {
                             onClick={() => navigate(PATH.allproducts)}
                             className="w-[200px] mt-[30px] rounded-[12px] !bg-red-500 hover:!bg-red-600"
                             size="large"
-                            icon={<ArrowRightOutlined/>}
-                            iconPosition="end"
                             type="primary"
                         >
-                            {translations.newProducts.allProductsButtonTxt}
+                            {translations.newProducts.allProductsButtonTxt} <ArrowRightOutlined/>
                         </Button>
+
                     </div>
                 </div>
             </div>
@@ -125,19 +124,19 @@ const NewProducts = () => {
                                 className="w-[250px] shadow-xl hover:shadow-blue-300 overflow-hidden cursor-pointer duration-300 rounded-[20px] pb-[10px] mb-[32px]">
                                 <img className="w-full h-[200px] mb-0 object-cover" src={item.images?.[0] || noImage}
                                      alt={item.name || "Product Image"} width={194} height={231}/>
-                               <div className='px-[30px] py-[20px]'>
-                                                <h3 className='font-medium text-[24px] mb-0 line-clamp-2'>{item.name}</h3>
+                                <div className='px-[30px] py-[20px]'>
+                                    <h3 className='font-medium text-[24px] mb-0 line-clamp-2'>{item.name}</h3>
 
-                                                {item.discount > 0 && (
-                                                    <del className='font-regular text-[18px] text-[#73808E]'>
-                                                        {new Intl.NumberFormat('uz-UZ').format(item.price)}
-                                                    </del>
-                                                )}
+                                    {item.discount > 0 && (
+                                        <del className='font-regular text-[18px] text-[#73808E]'>
+                                            {new Intl.NumberFormat('uz-UZ').format(Number(item.price))}
+                                        </del>
+                                    )}
 
-                                                <p className='font-medium text-[22px] text-[#3E3E3E]'>
-                                                    {new Intl.NumberFormat('uz-UZ').format(item.discounted_price)}
-                                                </p>
-                                            </div>
+                                    <p className='font-medium text-[22px] text-[#3E3E3E]'>
+                                        {new Intl.NumberFormat('uz-UZ').format(Number(item.discounted_price))}
+                                    </p>
+                                </div>
                                 <button
                                     className="product-card-button cursor-pointer w-[200px] py-[15px] block mx-auto rounded-[12px] text-white font-medium text-[17px]">
                                     {translations.newProducts.buyText} <ShoppingOutlined/>
@@ -145,11 +144,15 @@ const NewProducts = () => {
                             </li>
                         ))}
                     </ul>
-                    <Button onClick={() => navigate(PATH.allproducts)}
-                            className="w-full mt-[30px] rounded-[20px] !bg-red-500" size="large"
-                            icon={<ArrowRightOutlined/>} iconPosition="end" type="primary">
-                        {translations.newProducts.allProductsButtonTxt}
+                    <Button
+                        onClick={() => navigate(PATH.allproducts)}
+                        className="w-[200px] mt-[30px] rounded-[12px] !bg-red-500 hover:!bg-red-600"
+                        size="large"
+                        type="primary"
+                    >
+                        {translations.newProducts.allProductsButtonTxt} <ArrowRightOutlined/>
                     </Button>
+
                 </div>
             </div>
             {/* tablet Products Responsive */}
@@ -165,18 +168,18 @@ const NewProducts = () => {
                                 <img className="w-full h-[170px] mb-0 object-cover" src={item.images?.[0] || noImage}
                                      alt={item.name || "Product Image"} width={194} height={231}/>
                                 <div className='px-[30px] py-[20px]'>
-                                                <h3 className='font-medium text-[24px] mb-0 line-clamp-2'>{item.name}</h3>
+                                    <h3 className='font-medium text-[24px] mb-0 line-clamp-2'>{item.name}</h3>
 
-                                                {item.discount > 0 && (
-                                                    <del className='font-regular text-[18px] text-[#73808E]'>
-                                                        {new Intl.NumberFormat('uz-UZ').format(item.price)}
-                                                    </del>
-                                                )}
+                                    {item.discount > 0 && (
+                                        <del className='font-regular text-[18px] text-[#73808E]'>
+                                            {new Intl.NumberFormat('uz-UZ').format(Number(item.price))}
+                                        </del>
+                                    )}
 
-                                                <p className='font-medium text-[22px] text-[#3E3E3E]'>
-                                                    {new Intl.NumberFormat('uz-UZ').format(item.discounted_price)}
-                                                </p>
-                                            </div>
+                                    <p className='font-medium text-[22px] text-[#3E3E3E]'>
+                                        {new Intl.NumberFormat('uz-UZ').format(Number(item.discounted_price))}
+                                    </p>
+                                </div>
                                 <button
                                     className="product-card-button cursor-pointer w-[130px] py-[5px] block mx-auto rounded-[12px] text-white font-medium text-[15px]">
                                     {translations.newProducts.buyText} <ShoppingOutlined/>
@@ -184,11 +187,15 @@ const NewProducts = () => {
                             </li>
                         ))}
                     </ul>
-                    <Button onClick={() => navigate(PATH.allproducts)}
-                            className="w-full mt-[30px] rounded-[20px] !bg-red-500" size="large"
-                            icon={<ArrowRightOutlined/>} iconPosition="end" type="primary">
-                        {translations.newProducts.allProductsButtonTxt}
+                    <Button
+                        onClick={() => navigate(PATH.allproducts)}
+                        className="w-[200px] mt-[30px] rounded-[12px] !bg-red-500 hover:!bg-red-600"
+                        size="large"
+                        type="primary"
+                    >
+                        {translations.newProducts.allProductsButtonTxt} <ArrowRightOutlined/>
                     </Button>
+
                 </div>
             </div>
             {/* Mobile Products Responsive */}

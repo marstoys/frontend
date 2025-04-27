@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from 'react'
+import  { useState, useEffect, useRef } from 'react'
 import { BasketIcon, CallIcon, ExitIcon, HeaderInstagramIcon, HeaderTelegramIcon, MailIcon, MenuIcon } from "../assets/Icon"
 import { Link, NavLink } from 'react-router-dom'
 import SiteLogo from "../assets/images/SiteLogo.svg"
